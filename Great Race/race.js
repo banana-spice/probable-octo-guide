@@ -40,19 +40,19 @@ function runTime(){
 		clearInterval(runMeter);
 		document.getElementById("run2").src = "images/omipose.png";
 		document.getElementById("run1").src = "images/kimipose.png";
-		document.getElementById("winner").innerhtml = "<h2 onclick='reset()' >It's a Tie!</h2>";
+		document.getElementById("winner").innerhtml = "<h2 onclick='reset();' >It's a Tie!</h2>";
 	
 	} else {
 		if (runDis1 >= 300){
 			clearInterval(runMeter);
 			document.getElementById("run1").src = "images/kimipose.png";
-			document.getElementById("winner").innerhtml = "<h2>Kimiko Wins!</h2> <img src='images/kimipose.png' onclick='reset()'>";
+			document.getElementById("winner").innerhtml = "<h2>Kimiko Wins!</h2> <img src='images/kimipose.png' onclick='reset();'>";
 		}
 		
 		if (runDis2 >= 300){
 			clearInterval(runMeter);
 			document.getElementById("run2").src = "images/omipose.png";
-			document.getElementById("winner").innerhtml = "<h2>Omi Wins!</h2> <img src='images/omipose.png' onclick='reset()'>";
+			document.getElementById("winner").innerhtml = "<h2>Omi Wins!</h2> <img src='images/omipose.png' onclick='reset();'>";
 		}
 	}
 }
