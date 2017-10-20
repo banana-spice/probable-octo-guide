@@ -1,0 +1,28 @@
+body, p, img, .bg, .arrange{margin:0px; padding: 0px;}
+
+body, html{
+	height: 100%;
+}
+
+.bg{
+	background-image: url('images/field.png');
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: cover;
+}
+#winner{
+	text-align: center;
+	margin: auto;
+	width: auto;
+	height: auto;
+	z-index: 10;
+}
+.stoplight{
+	position: absolute;
+	bottom: 350px;
+}
+.runners{
+	position: absolute;
+	bottom: 50px;
+}
