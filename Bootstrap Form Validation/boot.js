@@ -2,11 +2,6 @@
 //Date: 10-11-2017
 //File: boot.js
 
-function error(){
-	
-
-}
-
 function userName(){
 	var nameLength = document.bootval.userName.value.length;
 	if (nameLength < 6){
@@ -16,6 +11,7 @@ function userName(){
 		document.getElementById("nameErr").style.display = "none"; 
 		document.getElementById("userName").style.backgroundColor = "white";
 		var nameVal = document.bootval.userName.value;
+		var goodNam = true;
 	}
 	return false;
 }
@@ -27,6 +23,8 @@ function checkMon(){
 	for(var i = 0; i < len; i++) {
 		if(document.bootval.pickMon[i].checked){
 			var checked = 1;
+			var monVal = document.bootval.pickMon.value;
+			var goodMon = true;
 		}
 	}
 	if(checked == 0){
@@ -46,17 +44,14 @@ function checkPhone(){
 		document.getElementById("phoneErr").style.display = "none"; 
 		document.getElementById("userPhone").style.backgroundColor = "white";
 		var phoneVal = document.bootval.userPhone.value;
+		var goodPhone = true;
 	}
-}
-
-function check(){
-
 }
 
 
 function emailCheck(){
-		var eVal = document.bootval.userEmail.value;
-	var patt = new RegExp (/^\w([\.-]?\w+)*@([\.-]?\w+)*(\.\w{2,})+$/);
+	var eVal = document.bootval.userEmail.value;
+	var patt = new RegExp (/\S+@\S+(\.\w{2,})+$/);
 	var res = patt.test(eVal);
 	
 	if (res == false) {
@@ -66,5 +61,24 @@ function emailCheck(){
 		document.getElementById("emailErr").style.display = "none"; 
 		document.getElementById("userEmail").style.backgroundColor = "white";
 		var emailVal = document.bootval.userEmail.value;
+		var goodEmail = true;
 	}
+}
+
+function check(){
+	userName();
+	emailCheck();
+	checkPhone();
+	checkMon();
+	
+	if (goodNam = true){
+		if (goodEmail = true){
+			if (goodPhone = true){
+				if (goodMon = true){
+					
+				}
+			}
+		}
+	}
+	
 }
