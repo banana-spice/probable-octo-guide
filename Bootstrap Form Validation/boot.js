@@ -2,11 +2,14 @@
 //Date: 10-11-2017
 //File: boot.js
 
+var blank = "";
+
 function userName(){
 	var nameLength = document.bootval.userName.value.length;
 	if (nameLength < 6){
 		document.getElementById("nameErr").style.display = "block"; 
 		document.getElementById("userName").style.backgroundColor = "pink";
+		return blank;
 	} else{
 		document.getElementById("nameErr").style.display = "none"; 
 		document.getElementById("userName").style.backgroundColor = "white";
@@ -23,6 +26,7 @@ function emailCheck(){
 	if (res == false) {
 		document.getElementById("emailErr").style.display = "block"; 
 		document.getElementById("userEmail").style.backgroundColor = "pink";
+		return blank;
 	} else{
 		document.getElementById("emailErr").style.display = "none"; 
 		document.getElementById("userEmail").style.backgroundColor = "white";
@@ -39,6 +43,7 @@ function checkPhone(){
 	if (res == false) {
 		document.getElementById("phoneErr").style.display = "block"; 
 		document.getElementById("userPhone").style.backgroundColor = "pink";
+		return blank;
 	} else{
 		document.getElementById("phoneErr").style.display = "none"; 
 		document.getElementById("userPhone").style.backgroundColor = "white";
@@ -59,6 +64,8 @@ function checkMon(){
 	}
 	if(checked == 0){
 		alert("A Monster must be selected")
+		return blank;
+		
 	} else {
 		var monVal = document.bootval.pickMon.value;
 		return monVal;
@@ -74,14 +81,33 @@ function check(){
 	var monVal = checkMon();	
 	var hauntVal = document.bootval.whatHaunt.value;
 	
+	var pass = " ";
+	
+	var ary = [nameVal, emailVal, phoneVal, monVal];
+	var sneak = 0;
+	for(i = 0; i < ary.length; i++) {
+		if (ary[i] = ""){
+			sneak += 1;
+		}
+	}
+	
+	if (sneak > 0){
+		var pass = "";
+	} else {
+		var pass = nameVal + emailVal + phoneVal + monVal;
+	}
+	
+	if (pass != ""){
+		window.location.assign("thanks.html");
+		
+		var x = location.search;	
+		document.getElementById("formFill").write(x);
 
+	}
 	
 }
 
-function fillThanks() {
-	window.location.assign("thanks.html");
-	document.getElementById("formFill").innerHTML = "<p>Name: " + nameVal + "</p> <p>Email: " + emailVal + "</p> <p>Phone #: " + phoneVal + "</p> <p>Chosen Monster: " + monVal + "</p> <p>Favored Haunt: " + hauntVal + "</p>";
-}
+
 
 
 
