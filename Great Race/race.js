@@ -5,17 +5,17 @@
 var runDis1 = 0;
 var runDis2 = 0;
 
-function startRace(){
-	document.getElementById('stoplight').src = 'images/start.png';
-	runMeter = setInterval(runTime, 2000);
-}
 
 function reset(){
+	clearInterval(runMeter);
 	var runDis1 = 0;
 	var runDis2 = 0;
 	
 	var randNum1 = 0;
 	var randNum2 = 0;
+	
+	var margin1 = "0px";
+	var margin2 = "0px";
 	
 	document.getElementById("run1").style.marginLeft = "0px";
 	document.getElementById("run2").style.marginLeft = "0px";
@@ -24,6 +24,11 @@ function reset(){
 	document.getElementById("run2").src = "images/omirun.png";	
 	document.getElementById("stoplight").src = "images/stop.png";
 	document.getElementById("winner").innerHTML = " ";
+}
+
+function startRace(){
+	document.getElementById('stoplight').src = 'images/start.png';
+	runMeter = setInterval(runTime, 2000);
 }
 
 function runTime(){
