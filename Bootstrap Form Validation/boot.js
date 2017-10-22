@@ -74,11 +74,12 @@ function check(){
 	var monVal = checkMon();	
 	var hauntVal = document.bootval.whatHaunt.value;
 	
-	window.location.assign("thanks.html");
+
+	
 }
 
 function fillThanks() {
-	
+	window.location.assign("thanks.html");
 	document.getElementById("formFill").innerHTML = "<p>Name: " + nameVal + "</p> <p>Email: " + emailVal + "</p> <p>Phone #: " + phoneVal + "</p> <p>Chosen Monster: " + monVal + "</p> <p>Favored Haunt: " + hauntVal + "</p>";
 }
 
